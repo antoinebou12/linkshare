@@ -17,8 +17,10 @@
         <td><%= link.title %></td>
         <td><%= link.url %></td>
         <td><%= link_to 'Show', link %></td>
+        <% if link.user == current_user %>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Link', new_link_path %>
+
