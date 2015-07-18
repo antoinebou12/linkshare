@@ -4,5 +4,15 @@
       <%= link_to link.title, link %><br>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.email %></small>
     </h2>
+    <div class="btn-group">
+      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-thumbs-up upvotestyle"></span>
+        <%= link.get_upvotes.size %>
+      <% end %>
+      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-thumbs-down downvotestyle">
+        <%= link.get_downvotes.size %>
+      <% end %>
+    </div>
   </div>
 <% end %>

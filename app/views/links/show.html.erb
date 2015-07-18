@@ -2,13 +2,20 @@
   <h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>Submitted by <%= @link.user.email %></small></h1>
 </div>
 
-<div class="btn-group">
-	<%= link_to '<span style="color:#FFFFFF;">Visit URL<span>'.html_safe, @link.url, class: "btn btn-primary" %>
-</div>
-
 <% if @link.user == current_user -%>
 	<div class="btn-group">
-		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+		<%= link_to '<span style="color:#5bc0de;">Edit</span>'.html_safe, edit_link_path(@link), class: "btn btn-default" %>
+		<%= link_to '<span style="color:#d9534f;">Destroy</span>'.html_safe, @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 	</div>
 <% end %>
+
+<div class="btn-group pull-right">
+  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-thumbs-up upvotestyle"></span>
+    <%= @link.get_upvotes.size %>
+  <% end %>
+  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-thumbs-down downvotestyle">
+    <%= @link.get_downvotes.size %>
+  <% end %>
+</div>
