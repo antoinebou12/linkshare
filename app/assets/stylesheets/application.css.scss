@@ -13,13 +13,48 @@
  *= require_tree .
  *= require_self
  */
-body {
-    font-family: 'Open Sans';
-    color: #222222;
-    font-size: 13px;
-    line-height: normal;
-    -webkit-font-smoothing: auto;
-    font-style: normal;
-	font-variant: normal;
-    
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+a:hover{
+         text-decoration: none;
+}
+#logo {
+	font-size: 26px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding: 15px 0;
+	a {
+		color: #2F363E;
+	}
+}
+
+#main_content {
+	#content {
+		float: none;
+	}
+	padding-bottom: 100px;
+	.link {
+		padding: 2em 1em;
+		border-bottom: 1px solid #e9e9e9;
+		.title {
+
+			a {
+				color: #0084B4;
+	
+			}
+		}
+	}
+	.comments_title {
+		margin-top: 2em;
+	}
+	#comments {
+		.comment {
+			padding: 1em 0;
+			border-top: 1px solid #E9E9E9;
+			.lead {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
