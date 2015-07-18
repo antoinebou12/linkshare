@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+body {
+    font-family: 'Open Sans';
+    color: #222222;
+    font-size: 13px;
+    line-height: normal;
+    -webkit-font-smoothing: auto;
+    font-style: normal;
+	font-variant: normal;
+    
+}
