@@ -2,10 +2,10 @@
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %><br>
-      <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.email %></small>
+      <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
     </h2>
-    <div class="btn-group">
-      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+    <div class="btn-group upvotestyle">
+      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm upvotestyle" do %>
         <span class="glyphicon glyphicon-thumbs-up upvotestyle"></span>
         <%= link.get_upvotes.size %>
       <% end %>

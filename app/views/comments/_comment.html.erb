@@ -7,7 +7,7 @@
  
     <div class="btn-group pull-right">
       <% if comment.user == current_user -%>
-        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+        <%= link_to '<span style="color:#d9534f;">Destroy</span>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
       <% end %>
     </div>
   </div>

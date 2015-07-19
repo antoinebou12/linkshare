@@ -2,7 +2,7 @@ class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :authorized_user, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index, :show]
-
+  impressionist actions: [:show], unique: [:session_hash]
   # GET /links
   # GET /links.json
   def index
@@ -90,7 +90,4 @@ end
     def link_params
       params.require(:link).permit(:title, :url)
     end
-    
-
-
 end
