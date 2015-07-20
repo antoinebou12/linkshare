@@ -2,12 +2,13 @@
 #
 # Table name: links
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  url        :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  url         :string(255)
+#  description :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
 #
 # Indexes
 #
