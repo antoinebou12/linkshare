@@ -9,6 +9,11 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
+# Indexes
+#
+#  index_comments_on_link_id  (link_id)
+#  index_comments_on_user_id  (user_id)
+#
 
 require 'test_helper'
 

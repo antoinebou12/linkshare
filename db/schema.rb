@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150719021012) do
   add_index "links", ["user_id"], name: "index_links_on_user_id"
 
   create_table "users", force: true do |t|
+    t.boolean  "admin"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
