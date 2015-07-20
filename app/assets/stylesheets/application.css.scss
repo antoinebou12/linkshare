@@ -15,9 +15,15 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ .ui-tooltip
+{
+    font-family:Calibri;
+    background-color:#fff;
+}
+
  
- 
-a:hover{
+a:hover
+{
          text-decoration: none;
 }
 .watch-view-count{
@@ -30,10 +36,12 @@ a:hover{
   color: #666;
 }
 
-.upvotestyle{
+.upvotestyle
+{
  	color:#0084B4;
 }
-.downvotestyle{
+.downvotestyle
+{
     color:#d9534f;
 }
 
