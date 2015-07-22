@@ -1,7 +1,7 @@
 <% @links.each do |link| %>
   <div class="link row clearfix">
     <h2>
-      <span title="<a id='myCard' class='embedly-card embedly-tooltips' href= '<%= link.url %> ' ><%= link.title %></a>" class="tooltip-link"><%= link_to link.title, link %></span><br>
+      <span title="<a id='myCard' class='embedly-card embedly-tooltips' href= '<%= link.url %> ' ><%= link.title %></a> <span class='preview-bar-link upvotestyle'> <span class='glyphicon glyphicon-thumbs-up upvotestyle'></span> <%= link.get_upvotes.size %>  <span class='downvotestyle'><span class='glyphicon glyphicon-thumbs-down downvotestyle'></span> <%= link.get_downvotes.size  %></span> <span class='glyphicon glyphicon glyphicon-comment upvotestyle'> </span> <%= link.comments.size %> </span>" class="tooltip-link"><%= link_to link.title, link %></span><br>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
       <script>
       $(function() {
@@ -9,7 +9,6 @@
           content: function () {
             return $(this).prop('title');
             },
-          tooltipClass: "custom-tooltip-styling",
           track: true
           });
           var a = document.getElementById('#myCard');
@@ -26,10 +25,12 @@
         <span class="glyphicon glyphicon-thumbs-up upvotestyle"></span>
         <%= link.get_upvotes.size %>
       <% end %>
-      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-thumbs-down downvotestyle">
+      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm downvotestyle" do %>
+        <span class="glyphicon glyphicon-thumbs-down downvotestyle"></span>
         <%= link.get_downvotes.size %>
       <% end %>
     </div>
   </div>
 <% end %>
+
+<%= will_paginate @links, renderer: BootstrapPagination::Rails %>

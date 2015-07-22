@@ -31,4 +31,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
          has_many :links
+         def self.search(search)
+            if search
+             where(['name LIKE ?', "%#{search}%"])
+            else
+             all
+            end
+         end
 end

@@ -16,6 +16,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'sqlite3'
 gem 'impressionist'
 gem 'rails_admin', '~> 0.6.8'
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'zurb-foundation', '~> 4.3.2'
+gem 'therubyracer', '~> 0.12.2'
 group :development do
     gem 'better_errors', '~> 2.1.1'
     gem 'binding_of_caller', '~> 0.7.2'

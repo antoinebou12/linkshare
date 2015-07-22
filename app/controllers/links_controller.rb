@@ -6,7 +6,11 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    if params[:search]
+    @links = Link.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
+    else
+    @links = Link.paginate(:page => params[:page], :per_page => 5)
+    end
   end
 
   # GET /links/1
@@ -88,6 +92,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :url,:description)
+      params.require(:link).permit(:title, :url, :description)
     end
 end
