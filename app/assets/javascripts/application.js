@@ -15,3 +15,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+      $(function() {
+        $( ".tooltip-link" ).tooltip({
+          content: function () {
+            return $(this).prop('title');
+            },
+          track: true
+          });
+          var a = $("embedly-tooltips")
+           embedly('card', {
+            selector: 'a.embed',
+            chrome: '1',
+            controls: '0'
+          });
+          var IDs = [];
+$("#content").find("small").each(function(){ IDs.push("#" + this.id)}); 
+  
+         for (var i = 0; i < IDs.length; i++) {
+          var online = $(IDs[i]).attr("title");
+         if(online === "true"){
+             $( IDs[i]).addClass( "online" );
+             $( IDs[i] ).removeClass( "offline" );
+         }else if(online === "false"){
+             $( IDs[i]).addClass( "offline" );
+             $( IDs[i] ).removeClass( "online" );
+         };
+         
+    }
+    
+      
+        });

@@ -1,24 +1,8 @@
 <% @links.each do |link| %>
   <div class="link row clearfix">
     <h2>
-      <span title="<a id='myCard' class='embedly-card embedly-tooltips' href= '<%= link.url %> ' ><%= link.title %></a> <span class='preview-bar-link upvotestyle'> <span class='glyphicon glyphicon-thumbs-up upvotestyle'></span> <%= link.get_upvotes.size %>  <span class='downvotestyle'><span class='glyphicon glyphicon-thumbs-down downvotestyle'></span> <%= link.get_downvotes.size  %></span> <span class='glyphicon glyphicon glyphicon-comment upvotestyle'> </span> <%= link.comments.size %> </span>" class="tooltip-link"><%= link_to link.title, link %></span><br>
+      <span title="<a class='embedly-card embedly-tooltips' href= '<%= link.url %> ' ><%= link.title %></a> <span class='preview-bar-link upvotestyle'> <span class='glyphicon glyphicon-thumbs-up upvotestyle'></span> <%= link.get_upvotes.size %>  <span class='downvotestyle'><span class='glyphicon glyphicon-thumbs-down downvotestyle'></span> <%= link.get_downvotes.size  %></span> <span class='glyphicon glyphicon glyphicon-comment upvotestyle'> </span> <%= link.comments.size %> </span>" class="tooltip-link"><%= link_to link.title, link %></span><br>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
-      <script>
-      $(function() {
-        $( ".tooltip-link" ).tooltip({
-          content: function () {
-            return $(this).prop('title');
-            },
-          track: true
-          });
-          var a = document.getElementById('#myCard');
-          embedly('card', {
-            selector: 'a.embed',
-            chrome: '1',
-            controls: '0'
-          });
-        });
-      </script> 
     </h2>
     <div class="btn-group upvotestyle">
       <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm upvotestyle" do %>

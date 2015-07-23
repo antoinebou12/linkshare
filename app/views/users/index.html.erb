@@ -2,6 +2,8 @@
 <div class="link row clearfix">
 <h2>
 <span><%= link_to user.name, user %></span>
+<small id="<%=user.id%>" title="<%= User.online(30).include?(user) %>" class="online-on-off glyphicon glyphicon-off"></small>
+
 </h2>
 </div>
 <% end %>

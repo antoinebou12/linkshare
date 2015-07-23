@@ -1,6 +1,6 @@
 <div class="page-header">
 
-<h1><%= @user.name %></h1>
+<h1><%= @user.name %> <small id="<%= @user.id %>" title="<%= User.online(30).include?(@user) %>" class="online-on-off glyphicon glyphicon-off"></small></h1>
 <h1><small>Account created <span><%= @user.created_at.strftime("%d %B %Y").downcase %></span></small></h1>
 <% @user.links.each do |link| %>
  <div class="link row clearfix">

@@ -17,6 +17,13 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ 
+ .offline{
+ 	color:#d9534f;
+ }
+ .online{
+ 	color:#3c763d;
+ }
  .preview-bar-link
  {
  }
