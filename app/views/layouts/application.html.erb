@@ -6,11 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-   <%= javascript_include_tag 'bootstrap-switch.min.js'%>
-   <%= javascript_include_tag 'application.js'%>
    <script type="text/javascript" src="//cdn.embed.ly/player-0.0.9.min.js"></script>
    <script type="text/javascript" src="//cdn.embed.ly/jquery.embedly.scrollplay-0.0.1.min.js"></script>
-   <%= stylesheet_link_tag 'bootstrap-switch.min'%>
    <%= favicon_link_tag 'LinkShare-favicon4.ico' %>
    <meta name="google-site-verification" content="7xOJ9-ToaLzuR6O6_zVa_6fsoUShtdACy_JXVMm6HzM" />
 </head>
@@ -24,16 +21,17 @@
         	
 			<%= form_tag links_path, :method => 'get', class:"navbar-form navbar-left form-control search_form" do %>
 			<div class="form-group">
-			<%= text_field_tag :search, params[:search], class:"tooltip-link2", autocomplete:"off" %>
+			<%= text_field_tag :search, params[:search], class:"tooltip-link2 search_input", autocomplete:"off" %>
             </div>
             <div class="form-group">
-			<%= submit_tag "Search", class:"btn btn-default" %>
+			<%= button_tag(type: "submit", class: "search_button") do %>
+			<i class="glyphicon glyphicon-search"></i>
+			<% end %>
 			</div>
 			</script> 
 			<% end %>
         		<% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= link_to '<i style="color:#0084B4;" class="glyphicon glyphicon-link"></i>'.html_safe, new_link_path %></li>
 							<li><%= link_to '<i style="color:#0084B4;" class="glyphicon glyphicon-globe"></i>'.html_safe, users_path %></li>
 							<li><%= link_to '<i style="color:;" class="glyphicon glyphicon-user"></i>'.html_safe, edit_user_registration_path %></li>
 							<li><%= link_to '<i style="color:;" class="glyphicon glyphicon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete %></li>
@@ -55,12 +53,27 @@
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
+ <div class="action-container">
+        <div class="fab-container" tooltip="Add">
+            <div class="fab" id="root"><%= link_to "<span class='span-material'></span>".html_safe %>
+            </div>
+        </div>
+                <div class="fab-container" tooltip="Link">
+            <div class="fab" id="point"><%= link_to "<span class='span-material'></span>".html_safe, new_link_path  %>
+            </div>
+        </div>
+                <div class="fab-container" tooltip="File">
+            <div class="fab" id="fence"><%= link_to "<span class='span-material'></span>".html_safe %>
+            </div>
+        </div>
+    </div>
 
 			<div id="content" class="col-md-9 center-block">
 				<%= yield %>
 			      <footer>
 
 			      </footer>
+			      
 			</div>
 		</div>
 	</div>

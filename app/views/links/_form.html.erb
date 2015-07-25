@@ -1,4 +1,4 @@
-<%= form_for(@link) do |f| %>
+<%= form_for(@link, html: {class: 'form-signup'}) do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
@@ -10,22 +10,28 @@
       </ul>
     </div>
   <% end %>
-
+      <div class="panel panel-default">
+    <div class="panel-body">
+<h1 class="h1-signup">New Link</h1>
   <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :title, class:"label-signup" %><br>
+    <%= f.text_field :title, class: "input-signup" %>
   </div>
   <div class="form-group">
-    <%= f.label :url %><br>
-    <%= f.text_field :url, class: "form-control" %>
+    <%= f.label :url, class:"label-signup" %><br>
+    <%= f.text_field :url, class: "input-signup" %>
   </div>
   <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_field :description, class: "form-control" %>
+    <%= f.label :description, class:"label-signup" %><br>
+    <%= f.text_field :description, class: "input-signup" %>
   </div>
   <br>
+  
+</div>
+</div>
   <div class="form-group">
-    <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+    <%= f.submit "Submit", class: "button-signup" %>
   </div>
+
 
 <% end %>

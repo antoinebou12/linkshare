@@ -14,3 +14,7 @@ Rails.application.config.assets.precompile += %w( bootstrap-switch.min.js )
 Rails.application.config.assets.precompile += %w( bootstrap-switch.min.css )
 Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( application.css.scss )
+Rails.application.config.assets.precompile += %w( googleplus.css )
+Rails.application.config.assets.precompile += %w( signup.css )
+Rails.application.config.assets.precompile += %w( jquery.materialripple.js )
+

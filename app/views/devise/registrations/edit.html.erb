@@ -1,47 +1,50 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , class:"form-signup" }) do |f| %>
+            <% if flash[:error] %>
+                <div class="alert alert-danger fade in" role="alert">
+                  <%= flash[:error] %>
+                </div>
+            <% end %>
+                  <%= devise_error_messages! %>
 
   <div class="panel panel-default">
     <div class="panel-body">
-
-      <div class="form-inputs">
+<h1 class="h1-signup">Edit <%= resource_name.to_s.humanize %></h1>
         
       <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control", :autofocus => true %>
+        <%= f.label :name, class:"label-signup" %>
+        <%= f.text_field :name, class: "input-signup", :autofocus => true %>
       </div>
 
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <%= f.label :email, class:"label-signup" %>
+        <%= f.email_field :email, class: "input-signup", :autofocus => true %>
       </div>
       
       <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-        <%= f.password_field :current_password, class: "form-control" %>
+        <%= f.label :current_password, class:"label-signup" %> <i>(we need your current password to confirm your changes)</i>
+        <%= f.password_field :current_password, class: "input-signup" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
+        <%= f.label :password, class:"label-signup" %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.password_field :password, class: "input-signup", :autocomplete => "off" %>
       </div>
-
-
-
-      </div>
-
       <div class="form-group">
-        <%= f.submit "Update", class: "btn btn-primary" %>
+      <%= f.label :avatar, class:"label-signup" %> 
+      <%= f.file_field :avatar, class: "input-signup file-field" %>
+      <%= f.hidden_field :avatar_cache %>
       </div>
 
+
+      </div>
+  </div>
+      <div class="form-group">
+        <%= f.submit "Update", class: "button-signup" %>
+      </div>
+
+    
+
+  
     <% end %>
-  </div>
-  <div class="panel-footer">
-
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %></p>
-
-  </div>

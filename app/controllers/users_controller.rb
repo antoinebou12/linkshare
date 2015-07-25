@@ -16,6 +16,7 @@ before_action :set_user, only: [:show]
       @user = User.find(params[:id])
     end
     def user_params
-      params.require(:link).permit(:name, :admin)
+      params.require(:link).permit(:name, :admin, :avatar, :password, :avatar_cache, :remove_avatar, :email )
+
     end
 end

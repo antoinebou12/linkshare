@@ -1,31 +1,40 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-signup'}) do |f| %>
   <%= devise_error_messages! %>
 
-	  <div class="form-group">
-		  <%= f.label :name %>
- 		 <%= f.text_field :name, class: "form-control", :autofocus => true %>
-	  </div>
+    <div class="panel panel-default">
+    <div class="panel-body">
 
-	  <div class="form-group">
-	  	<%= f.label :email %>
-	  	<%= f.email_field :email, autofocus: true, class: "form-control", required: true %>
-	  </div>
+  <h1 class="h1-signup">Sign up</h1>
 
-	  <div class="form-group">
-	  	<%= f.label :password %>
-	  	<%= f.password_field :password, class: "form-control", required: true %>
-	  </div>
+       <div class="form-group">
+		   <%= f.label :name, class:"label-signup" %>
+ 		   <%= f.text_field :name, class: "input-signup", :autofocus => true %>
+ 		   </div>
+       <div class="form-group">
+	  	 <%= f.label :email, class:"label-signup" %>
+	  	 <%= f.email_field :email, autofocus: true, class: "input-signup", required: true %>
+	  	 </div>
+       <div class="form-group">
+	  	 <%= f.label :password, class:"label-signup" %>
+	  	 <%= f.password_field :password, class: "input-signup", required: true %>
+       </div>
+       <div class="form-group">
+	  	 <%= f.label :password_confirmation, class:"label-signup" %>
+	  	 <%= f.password_field :password_confirmation, class: "input-signup", required: true %>
+	  	 </div>
+       <div class="form-group">
+       <%= f.label :avatar, class:"label-signup " %> 
+       <%= f.file_field :avatar, class: "input-signup file-field" %>
+       <%= f.hidden_field :avatar_cache %>
+       </div>
+</div>
+</div>
+<div class="form-group">
+	  	<%= f.submit "Sign up", class: "button-signup" %>
+</div>
 
-	  <div class="form-group">
-	  	<%= f.label :password_confirmation %>
-	  	<%= f.password_field :password_confirmation, class: "form-control", required: true %>
-	  </div>
 
-	  <div class="form-group">
-	  	<%= f.submit "Sign up", class: "btn btn-lg btn-primary" %>
-	  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>

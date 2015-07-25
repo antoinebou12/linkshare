@@ -1,26 +1,29 @@
-<h2>Sign in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signup'}) do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1 class="h1-signup">Sign in</h1>
   <div class="form-group">
-  	<%= f.label :email %>
-  	<%= f.email_field :email, autofocus: true, class: "form-control", required: false %>
+  	<%= f.label :email, class:"label-signup" %>
+  	<%= f.email_field :email, autofocus: true, class: "input-signup", required: false %>
   </div>
 
   <div class="form-group">
-  	<%= f.label :password %>
-  	<%= f.password_field :password, class: "form-control", required: false %>
+  	<%= f.label :password, class:"label-signup" %>
+  	<%= f.password_field :password, class: "input-signup", required: false %>
   </div>
 
-  <div class="checkbox">
-  	<label>
+  <div class="checkbox form-group">
+  	<label class="label-signup">
   	<%= f.check_box :remember_me, required: false, as: :boolean if devise_mapping.rememberable? %> Remember Me
 		</label>
   </div>
-
-  <div class="form-group">
-  	<%= f.submit "Sign In", class: "btn btn-primary" %>
-  </div>
+</div>
+</div>
+<div class="form-group">
+  	<%= f.submit "Sign In", class: "button-signup" %>
+</div>
 
 <% end %>
 

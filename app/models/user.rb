@@ -17,6 +17,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
+#  avatar                 :string(255)
 #
 # Indexes
 #
@@ -30,7 +31,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :onliner
          
+         mount_uploader :avatar, AvatarUploader
+
+           validates_presence_of   :avatar
+           validates_integrity_of  :avatar
+           validates_processing_of :avatar
+         
+         
+         
          has_many :links
+        
          def self.search(search)
             if search
              where(['name LIKE ?', "%#{search}%"])
@@ -38,4 +48,5 @@ class User < ActiveRecord::Base
              all
             end
          end
+         
 end

@@ -15,7 +15,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('page:fetch', function() { NProgress.start(); })
+$(document).on('page:change', function() { NProgress.done(); })
+$(document).on('page:restore', function() { NProgress.remove(); })
       $(function() {
+ $('.span-material').materialripple();
+ $('.card').materialripple();
+
         $( ".tooltip-link" ).tooltip({
           content: function () {
             return $(this).prop('title');
@@ -29,19 +35,26 @@
             controls: '0'
           });
           var IDs = [];
-$("#content").find("small").each(function(){ IDs.push("#" + this.id)}); 
+$(".card-face__avatar").find("span").each(function(){ IDs.push("#" + this.id)}); 
   
          for (var i = 0; i < IDs.length; i++) {
           var online = $(IDs[i]).attr("title");
          if(online === "true"){
+             $( IDs[i]).css( "color", "#3c763d" );
              $( IDs[i]).addClass( "online" );
              $( IDs[i] ).removeClass( "offline" );
          }else if(online === "false"){
+             $( IDs[i]).css( "color", "#d9534f" );
              $( IDs[i]).addClass( "offline" );
              $( IDs[i] ).removeClass( "online" );
          };
          
     }
-    
-      
+     
+         
+
         });
+   function Link(){
+      var Link = $('.Linkjs').attr("title"); 
+      document.location.href = Link;
+   }
