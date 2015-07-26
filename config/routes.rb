@@ -48,6 +48,7 @@
 Rails.application.routes.draw do
 get '/users/show/:id', :to => 'users#show', :as => :user
 get '/users', :to => 'users#index'
+get '/files/new', :to => "links#new"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :comments
 

@@ -1,6 +1,9 @@
-<h1>Editing Link</h1>
-
+<h1>Edit</h1>
+<% if @link.file? %>
+<%= render 'formfile' %>
+<% else %>
 <%= render 'form' %>
+<% end %>
 
 <%= link_to 'Show', @link %> |
 <%= link_to 'Back', links_path %>

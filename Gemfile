@@ -26,6 +26,7 @@ gem 'redis-namespace', '~> 1.5.2'
 gem 'carrierwave', '~> 0.10.0'
 gem 'protected_attributes'
 gem 'mini_magick', '~> 4.2.7'
+gem 'dragonfly', '~> 1.0.10'
 group :development do
     gem 'better_errors', '~> 2.1.1'
     gem 'binding_of_caller', '~> 0.7.2'

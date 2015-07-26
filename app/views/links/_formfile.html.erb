@@ -1,0 +1,38 @@
+
+<%= form_for(@link, html: {class: 'form-signup'}) do |f| %>
+  <% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+      <% @link.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      <div class="panel panel-default">
+    <div class="panel-body">
+<h1 class="h1-signup">New File</h1>
+  <div class="form-group">
+    <%= f.label :title, class:"label-signup" %><br>
+    <%= f.text_field :title, class: "input-signup" %>
+  </div>
+  <div class="form-group">
+      <%= f.label :file, class:"label-signup" %> 
+      <%= f.file_field :file, id:"file", class: "input-signup file-field" %>
+      <%= f.hidden_field :file_cache %>
+  <div class="form-group">
+    <%= f.label :description, class:"label-signup" %><br>
+    <%= f.text_field :description, class: "input-signup" %>
+  </div>
+  <br>
+  
+</div>
+</div>
+  <div class="form-group">
+    <%= f.submit "Submit", class: "button-signup" %>
+  </div>
+
+
+<% end %>

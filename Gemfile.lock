@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     acts_as_votable (0.10.0)
+    addressable (2.3.8)
     annotate (2.6.10)
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
@@ -62,6 +63,10 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dragonfly (1.0.10)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3.0)
     erubis (2.7.0)
     execjs (2.5.2)
     font-awesome-rails (4.3.0.0)
@@ -207,6 +212,7 @@ DEPENDENCIES
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.1.0)
   devise (~> 3.3.0)
+  dragonfly (~> 1.0.10)
   impressionist
   jbuilder (~> 2.0)
   jquery-rails

@@ -1,14 +1,21 @@
 <div class="page-header">
-<div class="image-profil">
-<%= image_tag @user.avatar.url, class:"avatar" %>
-</div>
+<div class="">
+<div class="card"><!-- Face 1 -->
+  <div title="https://linkshare-noobcodeman.c9.io/users/show/<%= @user.id%>" onclick="Link();" class="card-face face-1 Linkjs"><!-- Avatar -->
+    <div class="card-face__avatar"><!-- Bullet notification --><span id="<%= @user.id%>" title="<%= User.online(30).include?(@user) %>" class="online-on-off card-face__bullet glyphicon glyphicon-off"></span><!-- User avatar -->
+    <img src="<%= @user.avatar.url %>" width="110" height="110" draggable="false"/></div><!-- Name -->
+    <h2 class="card-face__name"><%= @user.name %></h2><!-- Title --><span class="card-face__title">
+<% if @user.admin? %>
+<%= "<span>Admin</span>".html_safe %>
+<% end %>
 
-<div class="name-profil">
-<h1><%= @user.name %> <small id="<%= @user.id %>" title="<%= User.online(30).include?(@user) %>" class="online-on-off glyphicon glyphicon-off"></small></h1>
-<h1><small>Account created <span><%= @user.created_at.strftime("%d %B %Y").downcase %></span></small></h1>
+</span><!-- Cart Footer -->
+    <div class="card-face-footer">
+    </div>
+  </div>
 </div>
 </div>
-
+<center>
 <% @user.links.each do |link| %>
  <div class="link row clearfix">
     <h2>
@@ -18,3 +25,4 @@
         </div>
 <% end %>
 
+</center>

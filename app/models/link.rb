@@ -9,6 +9,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer
+#  file        :string(255)
 #
 # Indexes
 #
@@ -16,6 +17,7 @@
 #
 
 class Link < ActiveRecord::Base
+    mount_uploader :file, FileUploader
     acts_as_votable    
     belongs_to :user
     has_many :comments

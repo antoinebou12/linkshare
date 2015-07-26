@@ -8,6 +8,7 @@
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
    <script type="text/javascript" src="//cdn.embed.ly/player-0.0.9.min.js"></script>
    <script type="text/javascript" src="//cdn.embed.ly/jquery.embedly.scrollplay-0.0.1.min.js"></script>
+
    <%= favicon_link_tag 'LinkShare-favicon4.ico' %>
    <meta name="google-site-verification" content="7xOJ9-ToaLzuR6O6_zVa_6fsoUShtdACy_JXVMm6HzM" />
 </head>
@@ -63,7 +64,7 @@
             </div>
         </div>
                 <div class="fab-container" tooltip="File">
-            <div class="fab" id="fence"><%= link_to "<span class='span-material'></span>".html_safe %>
+            <div class="fab" id="fence"><%= link_to "<span class='span-material'></span>".html_safe, "/files/new" %>
             </div>
         </div>
     </div>

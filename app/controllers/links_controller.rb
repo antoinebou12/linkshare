@@ -27,11 +27,12 @@ class LinksController < ApplicationController
   def new
     @link = current_user.links.build
   end
-
+  def newfile
+    @link = Link.new
+  end
   # GET /links/1/edit
   def edit
   end
-
   # POST /links
   # POST /links.json
   def create
@@ -92,6 +93,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :url, :description)
+      params.require(:link).permit(:title, :url, :description, :file_cache, :remove_file, :file)
     end
 end

@@ -1,7 +1,8 @@
-
-
+<% if request.original_url == "https://linkshare-noobcodeman.c9.io/files/new"  %>
+<%= render 'formfile' %>
+<% else %>
 <%= render 'form' %>
-
+<% end %>
 <%= link_to links_path do %>
   <i class="glyphicon glyphicon-chevron-left"></i>
 <% end %>
