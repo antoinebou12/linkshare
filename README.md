@@ -5,6 +5,13 @@ inspire by tutorial online with added feature:
 	-link previewer
 	-admin page
 	-more interactive user function
- 
- 
+	
+![alt text]()
+![alt text]()
+![alt text]()
+	
+# Testing
+	- $ bash --login -c rvm use 2.2>/dev/null 2>&1; rails server -p 8080 -b 0.0.0.0 
+	- $ redis-server
+
 made with cloud9 IDE
