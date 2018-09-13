@@ -6,12 +6,15 @@ inspire by tutorial online with added feature:
 	-admin page
 	-more interactive user function
 	
-![alt text]()
-![alt text]()
-![alt text]()
+![Login](https://github.com/antoinebou13/linkshare/blob/master/linkshare-login.png)
+
+![Feed](https://raw.githubusercontent.com/antoinebou13/linkshare/master/linkshare-feed.png)
+
+![Link](https://raw.githubusercontent.com/antoinebou13/linkshare/master/linkshare.png)
+
 	
 # Testing
-	- $ bash --login -c rvm use 2.2>/dev/null 2>&1; rails server -p 8080 -b 0.0.0.0 
-	- $ redis-server
+	 $ bash --login -c rvm use 2.2>/dev/null 2>&1; rails server -p 8080 -b 0.0.0.0 
+	 $ redis-server
 
 made with cloud9 IDE
